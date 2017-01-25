@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>The DA2I Social Network</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" >Bienvenue sur Facebook_like</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+      <form class="navbar-form navbar-right">
+             <input type="text" class="form-control" name="" placeholder="Adresse email">
+       <input type="text" class="form-control" name="" placeholder="Mot de passe">
+       <input type="button" class="form-control" value="Connexion" name="envoi">
+     </form>  
+  
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <div class="container">
 <%@ page pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript">      
@@ -17,7 +57,7 @@
     } 
   </script>
 
-<%@include file="template/header.inc" %>
+
 <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-xs-12 col-sm-9">

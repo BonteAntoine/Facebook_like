@@ -1,5 +1,5 @@
  <footer>
-        <p>&copy; 2017 TDSN SAC</p>
+        <p>&copy; 2017 Facebook Like</p>
  </footer>
     </div><!--/.container-->
     <!-- Bootstrap core JavaScript
