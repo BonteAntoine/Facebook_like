@@ -45,9 +45,7 @@ CREATE TABLE amitiees(
 CREATE TABLE publications(
   "idPublication" INTEGER PRIMARY KEY NOT NULL,
   "contenu" LONGTEXT,
-  "date" DATETIME,
-  CONSTRAINT "publicationscol_UNIQUE"
-    UNIQUE("contenu"),
+  "datePublication" DATETIME,
   CONSTRAINT "auteur"
     FOREIGN KEY("idPublication")
     REFERENCES "utilisateurs"("idUtilisateur")
