@@ -39,6 +39,15 @@ CREATE TABLE amitiees(
   FOREIGN KEY("userA") REFERENCES "utilisateurs"("idUtilisateur"),
   FOREIGN KEY("userB") REFERENCES "utilisateurs"("idUtilisateur")
 );
+
+CREATE TABLE demandeAmi(
+       "idDemande", INTEGER PRIMARY KEY NOT NULL,
+       "userA" INTEGER,
+       "userB" INTEGER,
+       FOREIGN KEY("userA") REFERENCES "utilisateurs"("idUtilisateur"),
+       FOREIGN KEY("userB") REFERENCES "utilisateurs"("idUtilisateur")
+);
+
 CREATE TABLE publications(
   "idPublication" INTEGER PRIMARY KEY AUTOINCREMENT,
   "contenu" LONGTEXT,
@@ -82,6 +91,9 @@ INSERT INTO amitiees VALUES
        (1,'2017-01-27',1,2);
 INSERT INTO amitiees VALUES
        (2,'2016-01-27',2,3);
+
+INSERT INTO demandeAmi VALUES
+       (1,1,3);
 
 INSERT INTO publications VALUES
        (1,'Voilà la publication 1 auteur : Antoine','2017-01-28',1);

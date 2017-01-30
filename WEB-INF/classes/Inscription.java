@@ -14,7 +14,7 @@ public class Inscription extends HttpServlet{
 	req.setCharacterEncoding("UTF-8");
 	Connexion c = null;
 	try{
-	c = new Connexion("/home/clement/tomcat/webapps/TDSN/tdsn.db");
+	c = new Connexion("/home/root/tomcat/webapps/Facebook_like/Facebook_like.db");
 	c.connect();
 	
 	String nom = req.getParameter("nom");
