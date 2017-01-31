@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
+    
     <title>The DA2I Social Network</title>
 
     <!-- Bootstrap core CSS -->
@@ -34,11 +34,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="Actualite.jsp">Actualite</a></li>
+	    
+            <li><a href="Actualite.jsp">Actualite</a></li>
             <li><a href="Amis.jsp">Amis</a></li>
             <li><a href="Mur.jsp">Votre mur</a></li>
           </ul>
-  
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </nav><!-- /.navbar -->

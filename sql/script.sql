@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS utilisateurs;
 DROP TABLE IF EXISTS amitiees;
 DROP TABLE IF EXISTS publications;
 DROP TABLE IF EXISTS jaime;
+DROP TABLE IF EXISTS demandeAmi;
 
 
 CREATE TABLE visibilitee(
@@ -41,7 +42,7 @@ CREATE TABLE amitiees(
 );
 
 CREATE TABLE demandeAmi(
-       "idDemande", INTEGER PRIMARY KEY NOT NULL,
+       "idDemande" INTEGER PRIMARY KEY NOT NULL,
        "userA" INTEGER,
        "userB" INTEGER,
        FOREIGN KEY("userA") REFERENCES "utilisateurs"("idUtilisateur"),

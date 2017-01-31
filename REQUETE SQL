@@ -1,0 +1,50 @@
+Afficher un utilisateur (Plusieurs pages) :
+
+SELECT nom, prenom, datenaissance FROM utilisateurs WHERE idUtilisateur = ???;
+
+
+Afficher les publications des ses amis (page actualité) :
+
+SELECT * FROM publications WHERE auteur in (SELECT userB FROM amitiees where userA = ???);
+
+
+Afficher ses amis (page amis) :
+
+SELECT * FROM amitiees WHERE userA = ??? ;
+
+
+Afficher ses demandes d'amis (page demande d'ami) :
+
+SELECT * FROM demandeAmi WHERE userA = ??? ;
+
+
+Accepter un ami (page demande d'ami (en cliquant sur le bouton "ACCEPTER")) :
+
+INSERT INTO amitiees VALUES ('',DATETIME(),??A,??B);
+INSERT INTO amitiees VALUES ('',DATETIME(),??B,??A);
+DELETE FROM demandeAmi WHERE idDemande = ??? ;
+
+
+Refuser un ami (page demande d'ami (en cliquant sur le bouton "refuser")) :
+
+DELETE FROM demandeAmi WHERE idDemande = ??? ;
+
+
+Changer la visibilité de ses publications (page administration) :
+
+UPDATE utilisateurs SET refVisi = ??? WHERE idUtilisateur = ???;
+
+
+Afficher les visiibilités (page administration (liste déroulante)) :
+
+SELECT * FROM visibilitee;
+
+
+Chercher un utilisateur (page ...) :
+
+SELECT idUtilisateur, nom, prenom, datenaissance FROM utilisateurs WHERE nom LIKE '???%' ;
+
+
+Envoyer une demande d'amitié à un ami (page de résultat de recherche) :
+
+INSERT INTO demandeAmi VALUES ('', ??A, ??B) ;
