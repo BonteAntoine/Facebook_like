@@ -5,8 +5,8 @@ import javax.servlet.annotation.WebServlet;
 import java.sql.*;
 import db.Connexion;
 
-@WebServlet("/servlet/verifInscription")
-public class VerifInscription extends HttpServlet{
+@WebServlet("/servlet/demandeAmi")
+public class demandeAmi extends HttpServlet{
     public void service( HttpServletRequest req, HttpServletResponse res )
 	throws ServletException, IOException
     {
@@ -14,19 +14,17 @@ public class VerifInscription extends HttpServlet{
 	req.setCharacterEncoding("UTF-8");
 	Connexion c = null;
 	try{
-	c = new Connexion("/home/root/tomcat/webapps/Facebook_like/sql/facebook_like.db");
+	c = new Connexion("/home/infoetu/coolsaes/tomcat/webapps/Facebook_like/sql/facebook_like.db");
 	c.connect();
 	
-	String email = req.getParameter("email");
-	String verifReq="select * from utilisateurs where email = ?; ";
-        PreparedStatement ps = c.getConnection().prepareStatement(verifReq);
-	ps.setString(1, email);
+	String userA = req.getParameter("userA");
+	String userB = req.getParameter("userB");
+	String demandeAmi ="INSERT INTO demandeAmi  (userA, userB) VALUES (?, ?);";
+        PreparedStatement ps = c.getConnection().prepareStatement(demandeAmi);
+	ps.setString(1, userA);
+	ps.setString(2, userB);
 	ResultSet rs = ps.executeQuery();
-	if(rs.next()){
-	out.println(rs.getString("email"));
-	}//else{
-	// out.println("Email libre");
-	//}       
+
 	}catch(Exception e){
 	     out.println("<h2>"+e+"</h2>");
 	}

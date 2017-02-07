@@ -69,7 +69,7 @@
 	  String param = request.getParameter("ins");
 	  if(param != null){
 	  if(param.equals("true")){
-	  out.println("<div class='alert alert-success' role='alert'>Félicitations ! Vous faites maintenant parti(e) de TDSN ! Connectez vous !</div>");
+	  out.println("<div class='alert alert-success' role='alert'>Félicitations ! Vous faites maintenant parti(e) de Fb_like ! Connectez vous !</div>");
 	  }else if(param.equals("exist")){
 		 out.println("<div class='alert alert-warning' role='alert'>Oups ! L'adresse email est déjà prise !</div>");
 	  }else{
@@ -86,13 +86,16 @@
 
 	   <div class="col-xs-12 col-lg-8">
 
-	       <form action="servlet/inscription" method="post" name="form" id="form" class="form-signin">
+	       <form action="servlet/inscription" method="get" name="form" id="form" class="form-signin">
         <h2 class="form-signin-heading">Inscription</h2><br/>
+
                 <label for="inputEmail" class="sr-only">Nom</label>
         <input name="nom" type="text" id="nom" class="form-control" placeholder="Nom" required autofocus>
+
        <label for="inputPassword" class="sr-only">Prenom</label>
         <input name="prenom" type="text" id="prenom" class="form-control" placeholder="Prenom" required>
-	 <input name="datenaiss" type="date" id="datenaiss" class="form-control" placeholder="1989-04-14" required><br/>
+	 <input name="datenaissance" type="date" id="datenaissance" class="form-control" placeholder="1989-04-14" required><br/>
+   
 	 <input name="email" type="text" id="email" class="form-control" placeholder="Email" onkeyup="appel()" required><br/>
 	 <panel id="msg"></panel>
 	  <input name="mdp" type="password" id="mdp" class="form-control" placeholder="Mot de passe" required>

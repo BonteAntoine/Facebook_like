@@ -16,7 +16,7 @@
         Connection c = null;
         try
         {
-            c = new Connexion("/home/infoetu/coolsaes/tomcat/webapps/Facebook_like/sql/facebook_like.db");
+            c = new Connexion("/home/root/tomcat/webapps/Facebook_like/facebook_like.db");
 	    c.connect;
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("select * from publications");
@@ -53,3 +53,24 @@
 %>
 </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<div id='article'>
+<div id='1'></div>
+<div id='titreArticle'>date : Titre</div> <br />
+<textarea name='DESCRIPTION'> description </textarea><br />
+$row['DESCRIPTION']
+<span id='dateAuteur'> écrit par ".$row['AUTHOR']." le ".$row['PUBDATE'].". </span>
+</div>
+<br /> <br />
+<%@include file="template/footer.inc" %>

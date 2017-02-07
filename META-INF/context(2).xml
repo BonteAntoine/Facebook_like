@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Facebook_like" privileged="true" reloadable="true" >
+<Manager pathname="" />
+
+
+
+  <!-- Definition du pool -->
+  <Resource name="sql/facebook_like" 
+  	auth="Container" 
+  	type="javax.sql.DataSource"
+  	maxActive="3" maxIdle="1" maxWait="10000"
+  	driverClassName="org.sqlite.JDBC"
+  	url="jdbc:sqlite:/${catalina.home}/sql/facebook_like.db" 
+  	factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory">
+  </Resource>
+
+  <!-- Definition d'une valve d'acces -->
+  <Valve className="org.apache.catalina.valves.AccessLogValve"
+           prefix="Facebook_like_access1." suffix=".txt"
+           pattern="common"/>
+
+</Context>

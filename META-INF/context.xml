@@ -1,3 +1,4 @@
-<Context path="/vide" privileged="true" reloadable="true" >
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Facebook_like" privileged="true" reloadable="true" >
 <Manager pathname="" />
 </Context>
