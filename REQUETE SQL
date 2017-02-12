@@ -20,8 +20,8 @@ SELECT * FROM demandeAmi WHERE userA = ??? ;
 
 Accepter un ami (page demande d'ami (en cliquant sur le bouton "ACCEPTER")) :
 
-INSERT INTO amitiees VALUES ('',DATETIME(),??A,??B);
-INSERT INTO amitiees VALUES ('',DATETIME(),??B,??A);
+INSERT INTO amitiees(dateamitiee, userA, userB) VALUES (NOW(),??A,??B);
+INSERT INTO amitiees(dateamitiee, userA, userB) VALUES (NOW(),??B,??A);
 DELETE FROM demandeAmi WHERE idDemande = ??? ;
 
 
@@ -47,4 +47,9 @@ SELECT idUtilisateur, nom, prenom, datenaissance FROM utilisateurs WHERE nom LIK
 
 Envoyer une demande d'amitié à un ami (page de résultat de recherche) :
 
-INSERT INTO demandeAmi VALUES ('', ??A, ??B) ;
+INSERT INTO demandeAmi (userA, userB) VALUES (??A, ??B);
+
+
+INSCRIPTION (pas d'inscription) :
+
+INSERT INTO utilisateurs (nom, prenom, datenaissance, email, mdp, refvisi) VALUES (?nom?, ?prenom?, ?date?, ?@mail?, ?mdp?, 2)

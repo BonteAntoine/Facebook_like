@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/Facebook_like" privileged="true" reloadable="true" >
-<Manager pathname="" />
+  <Manager pathname="" />
+    <Resource name="jdbc/sqlite"
+    type="javax.sql.DataSource"
+    driverClassName="org.sqlite.JDBC"
+    url="jdbc:sqlite:/root/Bureau/apache-tomcat-8.5.9/webapps/Facebook_like/sql/test.db"
+    />
 </Context>

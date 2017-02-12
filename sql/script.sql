@@ -17,12 +17,12 @@ DROP TABLE IF EXISTS demandeAmi;
 
 
 CREATE TABLE visibilitee(
-  "idVisibilitee" INTEGER PRIMARY KEY NOT NULL,
+  "idVisibilitee" INTEGER PRIMARY KEY AUTOINCREMENT,
   "libelle" VARCHAR(45)
 );
 
 CREATE TABLE utilisateurs(
-  "idUtilisateur" INTEGER PRIMARY KEY NOT NULL,
+  "idUtilisateur" INTEGER PRIMARY KEY AUTOINCREMENT,
   "nom" VARCHAR(80),
   "prenom" VARCHAR(80),
   "datenaissance" DATE,
@@ -33,7 +33,7 @@ CREATE TABLE utilisateurs(
 );
 
 CREATE TABLE amitiees(
-  "idamitiees" INTEGER PRIMARY KEY NOT NULL,
+  "idamitiees" INTEGER PRIMARY KEY AUTOINCREMENT,
   "dateamitiee" DATE,
   "userA" INTEGER,
   "userB" INTEGER,
@@ -42,7 +42,7 @@ CREATE TABLE amitiees(
 );
 
 CREATE TABLE demandeAmi(
-       "idDemande" INTEGER PRIMARY KEY NOT NULL,
+       "idDemande" INTEGER PRIMARY KEY AUTOINCREMENT,
        "userA" INTEGER,
        "userB" INTEGER,
        FOREIGN KEY("userA") REFERENCES "utilisateurs"("idUtilisateur"),
@@ -60,7 +60,7 @@ CREATE TABLE publications(
 );
 
 CREATE TABLE jaime(
-  "idJaime" INTEGER PRIMARY KEY NOT NULL,
+  "idJaime" INTEGER PRIMARY KEY AUTOINCREMENT,
   "refPublication" INTEGER,
   "refUtilisateur" INTEGER,
     FOREIGN KEY("refPublication") REFERENCES "publications"("idPublication")
