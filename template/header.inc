@@ -42,6 +42,7 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </nav><!-- /.navbar -->
-
+ </head>
+          
     <div class="container">
 

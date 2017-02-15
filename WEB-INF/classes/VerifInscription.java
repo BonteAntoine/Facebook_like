@@ -14,7 +14,7 @@ public class VerifInscription extends HttpServlet{
 	req.setCharacterEncoding("UTF-8");
 	Connexion c = null;
 	try{
-	c = new Connexion("/home/root/tomcat/webapps/Facebook_like/sql/facebook_like.db");
+	c = new Connexion();
 	c.connect();
 	
 	String email = req.getParameter("email");

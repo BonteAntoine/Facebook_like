@@ -14,7 +14,7 @@ public class accepterAmi extends HttpServlet{
 	req.setCharacterEncoding("UTF-8");
 	Connexion c = null;
 	try{
-	c = new Connexion("/home/infoetu/coolsaes/tomcat/webapps/Facebook_like/sqlfacebook_like.db");
+	c = new Connexion("/home/infoetu/coolsaes/tomcat/webapps/Facebook_like/sql/facebook_like.db");
 	c.connect();
 	
 	String userA = req.getParameter("userA");

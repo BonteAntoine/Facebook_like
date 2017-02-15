@@ -17,6 +17,7 @@
     </servlet-mapping>
 -->
 
+
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
@@ -24,5 +25,46 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <!--  Lien entre les pages et les roles -->
+    <security-constraint>
+     <web-resource-collection>
+       <web-resource-name>email</web-resource-name>
+         <url-pattern>/Actualite.jsp</url-pattern>
+     </web-resource-collection>
+
+    <web-resource-collection>
+    <web-resource-name>email</web-resource-name>
+    <url-pattern>/Amis.jsp</url-pattern>
+    </web-resource-collection>
+
+    <web-resource-collection>
+    <web-resource-name>email</web-resource-name>
+    <url-pattern>/Mur.jsp</url-pattern>
+    </web-resource-collection>
+
+      <auth-constraint>
+         <role-name>utilisateur</role-name>
+         <role-name>administrateur</role-name>
+      </auth-constraint>
+    </security-constraint>
+
+
+
+    <!-- La maniere dont la page de login est affichee -->
+    <login-config>
+      <auth-method>BASIC</auth-method>
+      <realm-name>Indiquez votre email et votre mot de passe : </realm-name>
+    </login-config>
+
+
+    <!-- La liste des differents roles -->
+    <security-role>
+      <role-name>utilisateur</role-name>
+    </security-role>
+    <security-role>
+      <role-name>administrateur</role-name>
+    </security-role> 
+
 
 </web-app>

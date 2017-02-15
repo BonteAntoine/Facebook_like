@@ -15,7 +15,8 @@ public class Inscription extends HttpServlet{
 	Connexion c = null;
 	try{
 	   
-	    	c = new Connexion("/home/infoetu/coolsaes/tomcat/webapps/Facebook_like/sql/facebook_like.db");
+	    	c = new Connexion();
+		//c.setDBPath(req.getContextPath()+c.getDBPath());
 	   	c.connect();
 	
 	String nom = req.getParameter("nom");

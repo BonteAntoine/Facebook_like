@@ -21,18 +21,30 @@
     <link href="css/offcanvas.css" rel="stylesheet">
 
   <body>
+  
     <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" >Bienvenue sur Facebook_like</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-      <form class="navbar-form navbar-right">
-             <input type="text" class="form-control" name="" placeholder="Adresse email">
-       <input type="text" class="form-control" name="" placeholder="Mot de passe">
-       <input type="button" class="form-control" value="Connexion" name="envoi">
+
+
+
+
+
+      <form class="navbar-form navbar-right" action="servlet/VerifConnection" method="get" >
+
+       <input type="text" class="form-control" name="email" placeholder="Adresse email">
+       <input type="text" class="form-control" name="mdp" placeholder="Mot de passe">
+       <input type="submit" class="form-control" value="Connexion" name="envoi">
      </form>  
   
+
+
+
+
+
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </nav><!-- /.navbar -->
@@ -112,14 +124,14 @@
         </div><!--/.col-xs-12.col-sm-9-->
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-          <div class="list-group">
+          <!-- <div class="list-group">
             <a href="#" class="list-group-item active">Example</a>
             <a href="#" class="list-group-item">Example</a>
             <a href="#" class="list-group-item">Example</a>
             <a href="#" class="list-group-item">Example</a>
             <a href="#" class="list-group-item">Example</a>
             <a href="#" class="list-group-item">Example</a>
-          </div>
+          </div> -->
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
       <hr>

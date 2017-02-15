@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS amitiees;
 DROP TABLE IF EXISTS publications;
 DROP TABLE IF EXISTS jaime;
 DROP TABLE IF EXISTS demandeAmi;
+DROP TABLE IF EXISTS user_roles;
 
 
 CREATE TABLE visibilitee(
@@ -30,6 +31,12 @@ CREATE TABLE utilisateurs(
   "mdp" VARCHAR(40),
   "refVisi" INTEGER,
   FOREIGN KEY("refVisi") REFERENCES "visibilitee"("idVisibilitee")
+);
+
+CREATE TABLE user_roles
+(
+	"email" VARCHAR(80),
+	"role_name" VARCHAR(80)
 );
 
 CREATE TABLE amitiees(
@@ -72,7 +79,12 @@ CREATE TABLE jaime(
 );
 
 
-
+INSERT INTO user_roles VALUES
+       ('antoine@test.com','administrateur');
+INSERT INTO user_roles VALUES
+	('sylvain@test.com','utilisateur');
+INSERT INTO user_roles VALUES
+	('clement@test.com','utilisateur');
 
 INSERT INTO visibilitee VALUES
        (1,'Personne');
@@ -82,11 +94,11 @@ INSERT INTO visibilitee VALUES
        (3,'Tout le monde');
 
 INSERT INTO utilisateurs VALUES
-       (1,'Bonte','Antoine','2017-01-25','test@test.com','BA',1);
+       (1,'Bonte','Antoine','2017-01-25','antoine@test.com','BA',1);
 INSERT INTO utilisateurs VALUES
-       (2,'Coolsaet','Sylvain','2016-05-25','test@test.com','CS',2);
+       (2,'Coolsaet','Sylvain','2016-05-25','sylvain@test.com','CS',2);
 INSERT INTO utilisateurs VALUES
-       (3,'Lambert','Clément','2015-05-25','test@test.com','LC',3);
+       (3,'Lambert','Clément','2015-05-25','clement@test.com','LC',3);
 
 INSERT INTO amitiees VALUES
        (1,'2017-01-27',1,2);

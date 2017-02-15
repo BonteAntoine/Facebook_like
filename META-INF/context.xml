@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/Facebook_like" privileged="true" reloadable="true" >
-  <Manager pathname="" />
-    <Resource name="jdbc/sqlite"
-    type="javax.sql.DataSource"
-    driverClassName="org.sqlite.JDBC"
-    url="jdbc:sqlite:/root/Bureau/apache-tomcat-8.5.9/webapps/Facebook_like/sql/test.db"
-    />
+<Manager pathname="" />
+
+<!-- Definition du pool -->
+  <Resource name="sql/facebook_like" 
+  	auth="Container" 
+  	type="javax.sql.DataSource"
+  	maxActive="1" maxIdle="1" maxWait="10000"
+  	driverClassName="org.sqlite.JDBC"
+  	url="jdbc:sqlite:/home/infoetu/bontea/tomcat/webapps/Facebook_like/sql/facebook_like.db" 
+  	factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory">
+  </Resource>
+
+  <!-- Definition d'une valve d'acces -->
+  <Valve className="org.apache.catalina.valves.AccessLogValve"
+           prefix="Facebook_like_access1." suffix=".txt"
+           pattern="common"/>
+
+
+ <!-- Definition du Realm sans pool -->
+
+   <Realm  className="org.apache.catalina.realm.JDBCRealm" debug="99"
+           driverName="org.sqlite.JDBC"
+           connectionURL="jdbc:sqlite:/home/infoetu/bontea/tomcat/webapps/Facebook_like/sql/facebook_like.db"
+           connectionName="" connectionPassword=""
+           userTable="utilisateurs" userNameCol="email" userCredCol="mdp"
+           userRoleTable="user_roles" roleNameCol="role_name">
+    <!-- <CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler" algorithm="sha-512"/> -->
+   </Realm>
+
+
 </Context>
